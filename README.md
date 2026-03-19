@@ -1,4 +1,4 @@
-# Quant Trading AI 📈
+# Quant Trading AI 
 
 A production-quality quantitative trading system using walk-forward backtesting, XGBoost, LSTM, HMM regime detection, GARCH volatility forecasting, and cross-asset VIX signals.
 
