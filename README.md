@@ -1,4 +1,4 @@
-# Quant Trading AI 📈
+# Quant Trading AI 
 
 A production-grade quantitative trading system for QQQ (Nasdaq ETF) using walk-forward backtesting, XGBoost + LSTM ensemble, HMM regime detection, GARCH volatility forecasting, and cross-asset VIX signals.
 
