@@ -1,0 +1,49 @@
+{
+  "name": "exp1_baseline",
+  "timestamp": "20260311_220807",
+  "config": {
+    "symbol": "SPY",
+    "train_ratio": 0.7,
+    "signal_threshold": 0.55,
+    "stop_loss": 0.02,
+    "take_profit": 0.04,
+    "use_lstm": true,
+    "n_regimes": 3
+  },
+  "features": [
+    "sma_10",
+    "sma_20",
+    "sma_50",
+    "sma_200",
+    "ema_12",
+    "ema_26",
+    "vol_20",
+    "vol_60",
+    "atr_14",
+    "bb_width",
+    "rsi_14",
+    "macd",
+    "macd_signal",
+    "macd_hist",
+    "roc_10",
+    "roc_20",
+    "obv",
+    "volume_ratio",
+    "price_vs_sma_10",
+    "price_vs_sma_20",
+    "price_vs_sma_50",
+    "price_vs_sma_200",
+    "returns"
+  ],
+  "metrics": {
+    "sharpe": -1.213,
+    "max_drawdown": -0.0166,
+    "win_rate": 0.4474,
+    "profit_factor": 0.671,
+    "total_return": -0.0136,
+    "n_trades": 114,
+    "total_pnl": -100.58,
+    "final_capital": 9863.67
+  },
+  "notes": "Baseline run with default parameters"
+}

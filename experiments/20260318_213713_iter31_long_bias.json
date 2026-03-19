@@ -1,0 +1,87 @@
+{
+  "name": "iter31_long_bias",
+  "timestamp": "20260318_213713",
+  "config": {
+    "name": "iter31_long_bias",
+    "notes": "Long-bias: no shorts in uptrend",
+    "data": {
+      "symbol": "QQQ",
+      "period": "10y",
+      "interval": "1d",
+      "cross_assets": [
+        "^VIX"
+      ]
+    },
+    "features": {
+      "rolling_windows": [
+        10,
+        20,
+        50,
+        200
+      ],
+      "use_cross_asset": true,
+      "use_interactions": true
+    },
+    "model": {
+      "xgb_n_estimators": 200,
+      "xgb_max_depth": 3,
+      "xgb_learning_rate": 0.01,
+      "xgb_reg_alpha": 1.0,
+      "xgb_reg_lambda": 2.0,
+      "n_regimes": 3,
+      "lstm_lookback": 20,
+      "lstm_epochs": 20,
+      "lstm_hidden": 64,
+      "use_lstm": false
+    },
+    "backtest": {
+      "ensemble_agree": false,
+      "long_bias": true,
+      "initial_capital": 10000.0,
+      "train_window_days": 504,
+      "test_window_days": 21,
+      "signal_threshold": 0.5,
+      "max_position_pct": 0.35,
+      "stop_loss_pct": 0.02,
+      "take_profit_pct": 0.07,
+      "commission": 0.0005
+    }
+  },
+  "features": [
+    "vol_20",
+    "vol_60",
+    "atr_14",
+    "bb_width",
+    "bb_pos",
+    "rsi_14",
+    "macd_hist",
+    "roc_10",
+    "roc_20",
+    "volume_ratio",
+    "vol_ratio",
+    "price_vs_sma_10",
+    "price_vs_sma_20",
+    "price_vs_sma_50",
+    "price_vs_sma_200",
+    "returns",
+    "rsi_x_vol",
+    "momentum_strength",
+    "trend_vol",
+    "mean_reversion",
+    "vix_change",
+    "vix_sma10",
+    "vix_vs_sma",
+    "vix_z20"
+  ],
+  "metrics": {
+    "sharpe": 0.862,
+    "max_drawdown": -0.0097,
+    "win_rate": 0.5282,
+    "profit_factor": 1.549,
+    "total_return": 0.0311,
+    "n_trades": 301,
+    "n_windows": 86,
+    "final_capital": 10311.32
+  },
+  "notes": "Long-bias: no shorts in uptrend"
+}

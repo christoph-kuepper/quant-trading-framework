@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  dashboard:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data/cache:/app/data/cache   # persist downloaded data
+      - ./results:/app/results         # persist backtest results
+      - ./experiments:/app/experiments # persist experiment logs
+    environment:
+      - ALPACA_API_KEY=${ALPACA_API_KEY:-}
+      - ALPACA_SECRET_KEY=${ALPACA_SECRET_KEY:-}
+    restart: unless-stopped
+
+  backtest:
+    build: .
+    command: python3 main.py --iteration 30
+    volumes:
+      - ./data/cache:/app/data/cache
+      - ./results:/app/results
+      - ./experiments:/app/experiments
+    profiles: ["backtest"]
+
+  test:
+    build: .
+    command: python3 -m pytest tests/ -v
+    profiles: ["test"]

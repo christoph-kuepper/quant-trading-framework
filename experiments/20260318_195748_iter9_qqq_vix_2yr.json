@@ -1,0 +1,85 @@
+{
+  "name": "iter9_qqq_vix_2yr",
+  "timestamp": "20260318_195748",
+  "config": {
+    "name": "iter9_qqq_vix_2yr",
+    "notes": "Iter9: QQQ+VIX, 2yr train window",
+    "data": {
+      "symbol": "QQQ",
+      "period": "10y",
+      "interval": "1d",
+      "cross_assets": [
+        "^VIX"
+      ]
+    },
+    "features": {
+      "rolling_windows": [
+        10,
+        20,
+        50,
+        200
+      ],
+      "use_cross_asset": true,
+      "use_interactions": true
+    },
+    "model": {
+      "xgb_n_estimators": 100,
+      "xgb_max_depth": 3,
+      "xgb_learning_rate": 0.01,
+      "xgb_reg_alpha": 1.0,
+      "xgb_reg_lambda": 2.0,
+      "n_regimes": 3,
+      "lstm_lookback": 20,
+      "lstm_epochs": 20,
+      "lstm_hidden": 64,
+      "use_lstm": false
+    },
+    "backtest": {
+      "initial_capital": 10000.0,
+      "train_window_days": 504,
+      "test_window_days": 21,
+      "signal_threshold": 0.51,
+      "max_position_pct": 0.2,
+      "stop_loss_pct": 0.03,
+      "take_profit_pct": 0.06,
+      "commission": 0.001
+    }
+  },
+  "features": [
+    "vol_20",
+    "vol_60",
+    "atr_14",
+    "bb_width",
+    "bb_pos",
+    "rsi_14",
+    "macd_hist",
+    "roc_10",
+    "roc_20",
+    "volume_ratio",
+    "vol_ratio",
+    "price_vs_sma_10",
+    "price_vs_sma_20",
+    "price_vs_sma_50",
+    "price_vs_sma_200",
+    "returns",
+    "rsi_x_vol",
+    "momentum_strength",
+    "trend_vol",
+    "mean_reversion",
+    "vix_change",
+    "vix_sma10",
+    "vix_vs_sma",
+    "vix_z20"
+  ],
+  "metrics": {
+    "sharpe": 0.789,
+    "max_drawdown": -0.0054,
+    "win_rate": 0.5106,
+    "profit_factor": 1.547,
+    "total_return": 0.0138,
+    "n_trades": 282,
+    "n_windows": 86,
+    "final_capital": 10138.32
+  },
+  "notes": "Iter9: QQQ+VIX, 2yr train window"
+}

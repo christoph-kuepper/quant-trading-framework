@@ -1,0 +1,60 @@
+{
+  "name": "iter2_wf_wide",
+  "timestamp": "20260311_221331",
+  "config": {
+    "symbol": "SPY",
+    "train_window_days": 756,
+    "test_window_days": 63,
+    "signal_threshold": 0.55,
+    "stop_loss": 0.03,
+    "take_profit": 0.06,
+    "use_lstm": false,
+    "features": [
+      "vol_20",
+      "vol_60",
+      "atr_14",
+      "bb_width",
+      "bb_pos",
+      "rsi_14",
+      "macd_hist",
+      "roc_10",
+      "roc_20",
+      "volume_ratio",
+      "vol_ratio",
+      "price_vs_sma_10",
+      "price_vs_sma_20",
+      "price_vs_sma_50",
+      "price_vs_sma_200",
+      "returns"
+    ]
+  },
+  "features": [
+    "vol_20",
+    "vol_60",
+    "atr_14",
+    "bb_width",
+    "bb_pos",
+    "rsi_14",
+    "macd_hist",
+    "roc_10",
+    "roc_20",
+    "volume_ratio",
+    "vol_ratio",
+    "price_vs_sma_10",
+    "price_vs_sma_20",
+    "price_vs_sma_50",
+    "price_vs_sma_200",
+    "returns"
+  ],
+  "metrics": {
+    "sharpe": -0.611,
+    "max_drawdown": -0.0029,
+    "win_rate": 0.5143,
+    "profit_factor": 0.671,
+    "total_return": -0.0024,
+    "n_trades": 70,
+    "n_windows": 24,
+    "final_capital": 9975.91
+  },
+  "notes": "Iter2: wider stops, more room to breathe"
+}
