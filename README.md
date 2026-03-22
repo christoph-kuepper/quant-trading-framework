@@ -37,6 +37,7 @@ The model holds up on unseen data — no overfitting.
 | **5th percentile** | $9,254 |
 | **95th percentile** | $11,659 |
 
+![dashboard.png couldnt be displayed](dashboard_screenshot.png)
 ---
 
 ## Architecture
